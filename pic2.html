@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/beijing.png" media="screen" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+        $(window).ready(readyHandler);
+        function readyHandler() {
+            var i=0;
+            var timer = setInterval(function () {
+                $(".pics").animate({"left": '-100%'},2000,function () {
+                    $(this).children().first().insertAfter($(this).children().last());
+                    $(this).css("left","0");
+                });
+            },3000);
+        }
+    </script>
+    <style>
+        .banner{
+            height:518px;
+            overflow: hidden;
+            position: relative;
+            min-width:1096px;
+        }
+        .banner .pics{
+            width:400%;
+            min-width: 4400px;
+            position: absolute;
+            left:0;
+            height:100%;
+        }
+        .banner .pics .pic{
+            height:100%;
+            width:25%;
+            overflow: hidden;
+            float: left;
+        }
+        .banner .pics .pic img{
+            width:100%;
+        }
+        .banner .box{
+            min-width:1096px;
+            position: absolute;
+            left:50%;
+            top:0;
+            height:100%;
+            margin-left:-550px;
+        }
+    </style>
+</head>
+<body>
+<div class="banner">
+    <div class="pics">
+        <div class="pic pic1">
+            <img src="img/bj_pic1.jpg" alt="">
+        </div>
+        <div class="pic pic2">
+            <img src="img/bj_pic2.jpg" alt="">
+        </div>
+        <div class="pic pic3">
+            <img src="img/bj_pic3.jpg" alt="">
+        </div>
+        <div class="pic pic4">
+            <img src="img/bj_pic4.jpg" alt="">
+        </div>
+    </div>
+</div>
+</body>
+</html>
